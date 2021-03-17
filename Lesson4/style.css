@@ -95,8 +95,6 @@ h3 {
   padding: 0 10px;
   text-align: center;
   transition: 0.7s;
-  margin-left: auto;
-  margin-right: auto;
 }
 .article:hover {
   transform: scaleZ(1.1);
@@ -104,4 +102,9 @@ h3 {
   outline: hidden;
   outline-color: lightslategray;
   outline-style: solid;
+}
+.art3 {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
