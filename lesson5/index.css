@@ -22,17 +22,37 @@ body {
   height: calc(100vh - 50px);
   background-color: brown;
   display: flex;
-  flex-direction: row;
   align-content: space-around;
   align-items: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   box-sizing: border-box;
 }
 .box {
-  height: 40%;
-  width: 29%;
-  margin: 25px;
+  height: 41%;
+  width: 30%;
   background-color: burlywood;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+}
+.top {
+  height: 23%;
+  width: 88%;
+  background-color: brown;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.down {
+  height: 50%;
+  width: 88%;
+  background-color: brown;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
