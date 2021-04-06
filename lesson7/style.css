@@ -6,7 +6,6 @@ body {
   justify-content: flex-start;
   align-items: center;
   font-family: system-ui;
-  overflow: hidden;
 }
 .logo {
   margin-top: 20px;
@@ -20,6 +19,7 @@ body {
   border: 1px solid black;
   border-radius: 7px;
   box-shadow: 0px 0px 7px rgba(100, 96, 106, 0.2);
+  overflow: hidden;
 }
 .form {
   display: flex;
@@ -27,12 +27,13 @@ body {
   justify-content: space-between;
   padding: 13px 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 .image {
   width: 100%;
   background-size: cover;
   background-position: center;
-  margin-right: 3px;
+  box-sizing: border-box;
 }
 .foto {
   width: 100%;
@@ -67,6 +68,7 @@ body {
 a {
   text-decoration: none;
   margin-left: 20px;
+  color: black;
 }
 .divider {
   display: flex;
@@ -75,9 +77,10 @@ a {
 }
 h6 {
   font-size: 8px;
+  padding: 6px;
 }
 hr {
-  width: 125px;
+  width: 110px;
   display: flex;
   align-self: center;
 }
@@ -86,17 +89,16 @@ hr {
   width: 100%;
   justify-content: space-between;
 }
-.row input:first-of-type {
-  margin-right: 10px;
-}
 input {
   margin-bottom: 6px;
-  margin-right: 5px;
   width: 100%;
   box-sizing: border-box;
   padding: 13px;
   border-radius: 7px;
   border: 1px solid darkgray;
+}
+.row input:first-of-type {
+  margin-right: 6px;
 }
 .check-box {
   display: flex;
@@ -116,6 +118,7 @@ button {
   border: 0;
   border-radius: 7px;
   margin: 10px 0px 10px;
+  font-weight: 600;
 }
 button:hover {
   cursor: pointer;
