@@ -40,8 +40,6 @@ body {
   height: 100%;
   object-fit: cover;
 }
-/* strasznie chuda wysza mi ta dziewczyna, ale nie wiem jak ją przytyć :-) */
-
 .social-button {
   display: flex;
   width: 100%;
