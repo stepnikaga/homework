@@ -80,7 +80,7 @@ function power() {
   return 3 ** 4;
 }
 // f) zwraca 'Hello, ' + 'how are you?'
-function HowAreYou() {
+function howAreYou() {
   return "Hello," + "how are you?";
 }
 // g) zwraca wynik mnożenia 5 przez 60
@@ -156,24 +156,24 @@ console.log(personDetails);
 
 //10.  Napisz te same funkcje co wyżej ale dodając wartości jako argumenty podczas wywołania funkcji, czyli:
 // a) dodającą dwie liczby,
-function addNumber(A, B) {
-  return A + B;
+function addNumber(a, b) {
+  return a + b;
 }
 // b) wyświetlającą podany podczas wywołania napis,
-function inscription(Loren) {
-  return Loren;
+function inscription(loren) {
+  return loren;
 }
 // c) zwracającą true lub false w zależności od podania tej wartości jako argument,
 function boolean(bool) {
   return bool;
 }
 // d) zwracającą resztę z dzielenie dwóch liczb,
-function modulo2(A, B) {
-  return A % B;
+function modulo2(a, b) {
+  return a % b;
 }
 // e) zwracającą liczbę do braną do potęgi podanej jako drugi argument,
-function power2(A, B) {
-  return A ** B;
+function power2(a, b) {
+  return a ** b;
 }
 // f) zwracającej dwa złączone stringi podane w dwóch argumentach,
 function twoString(firstString, secondString) {
