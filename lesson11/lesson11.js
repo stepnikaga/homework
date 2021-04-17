@@ -142,15 +142,7 @@ function acceptNumber(number) {
 //      ma powyżej 15 lat to może oglądać, jak ma poniżej ale ma zgodę rodziców też może
 //      oglądać, a jak ma poniżej i nie ma zgody to nie może, wyświetli odpowiednie komunikaty,
 //    W tych funkcjach napisz warunki używając ternary operatora!!
-// function film(age, acceptance) {
-//   if (age >= 15) {
-//     return `Możesz oglądać film`;
-//   } else if (age < 15 || acceptance === true) {
-//     return `Możesz oglądać film`;
-//   } else {
-//     return `Film dozwolony od 15 l.`;
-//   }
-// }
+
 function film(age, acceptance) {
   return age >= 15 || acceptance
     ? `Możesz oglądać film`
