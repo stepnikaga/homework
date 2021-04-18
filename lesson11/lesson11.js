@@ -144,27 +144,44 @@ function acceptNumber(number) {
 //    W tych funkcjach napisz warunki używając ternary operatora!!
 
 function film(age, acceptance) {
-  return age >= 15 || acceptance
-    ? `Możesz oglądać film`
-    : `Film dozwolony od 15 l.`;
+  if (age > 15) {
+    return `Możesz oglądać film`;
+  } else if (age < 15 && acceptance === true) {
+    return `Możesz oglądać film`;
+  } else {
+    return `Film dla osób od 15 l.`;
+  }
 }
+//   return age >= 15 || acceptance
+//     ? `Możesz oglądać film`
+//     : `Film dozwolony od 15 l.`;
+// }
 
 //    f) zwracającą 'Tak' jeśli jak argument podamy true i 'Nie' jeśli podamy false,
 function question(answer) {
-  if (answer === true) {
-    return `Tak`;
-  } else {
-    return `Nie`;
-  }
+  return answer === true ? `Tak` : `Nie`;
 }
+
+// function question(answer){
+// if (answer === true) {
+//   return `Tak`;
+// } else {
+//   return `Nie`;
+// }
+// }
+
 //    g) zwracającą informację czy podana jako argument liczba jest parzysta czy nie,
 function evenUnpaired(number) {
-  if (number % 2 === 0) {
-    return `Liczba jest parzysta`;
-  } else {
-    return `Liczba jest nieparzysta`;
-  }
+  return number % 2 === 0 ? `Liczba jest parzysta` : `Liczba jest nieparzysta`;
 }
+
+// function evenUnpaired(number) {
+//   if (number % 2 === 0) {
+//     return `Liczba jest parzysta`;
+//   } else {
+//     return `Liczba jest nieparzysta`;
+//   }
+// }
 
 // 4. Napisz funkcje(warunki if, else - typy złożone):
 
