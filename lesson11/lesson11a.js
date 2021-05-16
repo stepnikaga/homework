@@ -1,87 +1,78 @@
 // 1. Napisz funkcje (typy proste):
 
 //    a) zwracającą sumę trzech liczb podanych w parametrach funkcji,
-function add(number1, number2, number3) {
-  return number1 + number2 + number3;
+
+function trzyLiczby(a, b, c) {
+  return a + b + c;
 }
 
 //    b) zwracającą pole trójkąta ze wzoru podstawa * wysokość / 2, która zwróci
-//      'Pole trójkąta to x(zmienna tu powinna być), czyli ma on x długości podstawy i x
+//      'Pole trójkąta to x(zmiennacd tu powinna być), czyli ma on x długości podstawy i x
 //       wysokości'
-function poleTrojkata(x, h) {
-  const pole = (x * h) / 2;
-  return `Pole trójkąta to ${pole}, czyli ma on ${x} długości podstawy i ${h} wysokości`;
+function poleTrojkata(podstawa, wysokosc) {
+  const pole = (podstawa * wysokosc) / 2;
+  return `Pole trójkąta to ${pole}, czyli ma on ${wysokosc} długości i ${wysokosc} wysokości.`;
 }
-
 //    c) zwracającą ile aktualnie ktoś ma lat prawo jazdy na podstawie dwóch argumentów,
 //      wieku danej osoby i wieku w którym to prawo jazdy zdał,
-function ageDrivingLicense(ageNow, ageExam) {
-  return ageNow - ageExam;
+function ilePrawoJazdy(wiekOsoby, wiekEgzaminu) {
+  const ileLatMaPrawko = wiekOsoby - wiekEgzaminu;
+  return `Dana osoba ma ${ileLatMaPrawko} prawo jazdy.`;
 }
-
 //    d) zwracającą ile zapłacimy za jazdę autem jeśli jako jeden parametr podamy spalanie
 //      na 100km, a jako drugi przejechaną trasę,
-function drivingCosts(fuelUse, distance) {
-  return (fuelUse / 100) * distance;
+function kosztJazdy(spalanie, kilometry) {
+  return (spalanie / 100) * kilometry;
 }
 
 //    e) zwracającą stringa 'Ala ma 23 lata i 2 dzieci', gdzie imię, wiek i ilość dzieci
 //      podajemy w parametrach funkcji,
-function person(firstName, age, children) {
-  return `${firstName} ma ${age} lata i ${children} dzieci`;
+function string(imie, wiek, iloscDzieci) {
+  return `${imie} ma ${wiek} lata i ${iloscDzieci} dzieci.`;
 }
-
 // 2. Napisz funkcje (typy złożone):
 
 //    a) zwracającą przekazaną do parametru tablicę,
-const array = ["Ola", true, 12];
-function returnArray(arr) {
-  return arr;
+const array = [1, 2, 3, 4];
+function arr1(tablica) {
+  return tablica;
 }
 
 //    b) zwracającą drugą wartość przekazanej do funkcji tablicy 3 elementowej,
-function threeElement(arr) {
-  return arr[1];
+function arr2(wartosc) {
+  return wartosc[1];
 }
-
 //    c) zwracającą stringa 'Przekazana tablica ma x elementów, a elementem nr 3 jest x'
-function stringArr(arr) {
-  return `Przekazana tablica ma ${arr.length} elementów, a elementem nr 3 jest ${arr[2]}.`;
+function tabli(striTablica) {
+  return `Przekazana tablica ma ${tablica.length} elementów a elementem nr 3 jest ${tablica[2]}`;
 }
 
 //    d) dodaje elementy do stworzonej na zewnątrz funkcji pustej tablicy i zwraca już
 //      zmienioną tablice z dodatkowym elementem,
-arr2 = [];
-function emptyArr(newElement) {
-  arr2.push(newElement);
-  return arr2;
+arr = [];
+function dodac(nowyElement) {
+  arr.push(nowyElement);
+  return arr;
 }
 
 //    e) zwracającą imię osoby przekazanej w obiekcie(powinien zawierać imię, nazwisko i wiek)
 //       do funkcji,
-const personData = {
-  imie: "Mikołaj",
-  nazwisko: "Rucki",
-  wiek: 34,
+let person = {
+  imie: `Adam`,
+  nazwisko: `Nowacki`,
+  wiek: 20,
   wzrost: 180,
 };
-function namePerson(name) {
-  return name.imie;
+function dane(daneOsoby) {
+  return daneOsoby.imie;
 }
-
 //    f) zwracającą stringa 'imię(tu zmienna) i nazwisko(tu zmienna) ma x(tu zmienna) lat
 //      i x(tu zmienna) cm wzrostu'
-function returnString(dataPerson) {
-  return `${dataPerson.imie}${dataPerson.nazwisko} ma ${dataPerson.wiek} lat i ${dataPerson.wzrost} cm wzrostu`;
+function daneString(personDane) {
+  return `${personDane.imie} ${personDane.nazwisko} ma ${personDane.wiek} lat i ${personDane.wzrost} cm wzrostu.`;
 }
-
 //    g) przyjmującą dwa parametry jeden do obiekt a drugi to wiek, i zwracającą zmieniony
 //      wiek, czyli wiek który przekazujemy w parametry zamieniamy z wiekiem w obiekcie,
-function twoParameter(object, age) {
-  object.changeAge = age;
-  return object.changeAge;
-}
-console.log(object.changeAge);
 
 // 3. Napisz funkcje (warunki if, else - typy proste):
 
