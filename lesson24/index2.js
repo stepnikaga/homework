@@ -51,6 +51,7 @@ const main = async () => {
   });
 
   const $buttonNext = document.getElementById("next");
+
   $buttonNext.addEventListener("click", async (el) => {
     const data = await fetch(
       "https://rickandmortyapi.com/api/character?page=1"
@@ -65,6 +66,7 @@ const main = async () => {
   });
 
   const $buttonAlternative = document.getElementById("alternative");
+
   $buttonAlternative.addEventListener("click", async (el) => {
     const data = await fetch(
       "https://rickandmortyapi.com/api/character?page=12"
@@ -72,40 +74,38 @@ const main = async () => {
     const json = await data.json();
     const $lista = document.getElementById("lista");
     $lista.innerHTML = "";
-    json.results.splice(19, 1).forEach((character) => characterCard(character));
-
-    function characterCard(data) {
-      const $card = document.createElement("div");
-      $card.classList = "card";
-
-      const $img = document.createElement("img");
-      $img.src = data.image;
-      $img.alt = data.name;
-
-      $card.appendChild($img);
-
-      const $name = document.createElement("H4");
-      $name.innerHTML = data.name;
-
-      const $container = document.createElement("div");
-      $container.classList = "container";
-
-      const $status = document.createElement("H4");
-      $status.innerHTML = data.$status;
-
-      $container.appendChild($name);
-      $container.appendChild($status);
-      $card.appendChild($container);
-
-      const $lista = document.getElementById("lista");
-      $lista.appendChild($card);
-    }
-    characterCard();
-
-    const character = await allCharacters();
-    character.results
-      .splice(0, 10)
-      .forEach((character) => characterCard(character));
+    json.results.splice(13, 1).forEach((character) => characterCard(character));
   });
+
+  function characterCard(data) {
+    const $card = document.createElement("div");
+    $card.classList = "card";
+
+    const $img = document.createElement("img");
+    $img.src = data.image;
+    $img.alt = data.name;
+
+    $card.appendChild($img);
+
+    const $name = document.createElement("H4");
+    $name.innerHTML = data.name;
+
+    const $container = document.createElement("div");
+    $container.classList = "container";
+
+    const $status = document.createElement("H4");
+    $status.innerHTML = data.$status;
+
+    $container.appendChild($name);
+    $container.appendChild($status);
+    $card.appendChild($container);
+
+    const $lista = document.getElementById("lista");
+    console.log($card);
+    $lista.appendChild($card);
+  }
+
+  const character = await allCharacters();
+  character.results.splice(0, 10).map((character) => characterCard(character));
 };
 main();
