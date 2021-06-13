@@ -4,21 +4,21 @@
 // a) Stwórz stronę index.html, do której dołączysz plik javascriptowy. W tym pliku pobierz jeszcze raz tablicę postaci
 // za pomocą async await,
 
-// const characterBoard = async () => {
-//   const data = await fetch("https://rickandmortyapi.com/api/character");
-//   const json = await data.json();
-//   return json.results;
-// };
-// characterBoard();
+const characterBoard = async () => {
+  const data = await fetch("https://rickandmortyapi.com/api/character");
+  const json = await data.json();
+  return json.results;
+};
+characterBoard();
 
 // b) Z pobranej tablicy stwórz nową tablicę zawierającą pierwsze 10 postaci za pomocą filter lub splice,
-// const character10Board = async () => {
-//   const data = await fetch("https://rickandmortyapi.com/api/character");
-//   const json = await data.json();
-//   const initialTen = await json.results.splice(0, 10);
-//   console.log(initialTen);
-// };
-// character10Board();
+const character10Board = async () => {
+  const data = await fetch("https://rickandmortyapi.com/api/character");
+  const json = await data.json();
+  const initialTen = await json.results.splice(0, 10);
+  console.log(initialTen);
+};
+character10Board();
 
 // d) Pod tytułem dodaj opis który będzie zawierał informację "Wszystkich dostępnych postaci jest X"(tutaj gdzie X wyswietl
 // liczbe wszystkich dostepnych postaci)
@@ -94,7 +94,7 @@ const main = async () => {
     $container.classList = "container";
 
     const $status = document.createElement("H4");
-    $status.innerHTML = data.$status;
+    $status.innerHTML = data.status;
 
     $container.appendChild($name);
     $container.appendChild($status);
