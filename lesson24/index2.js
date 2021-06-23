@@ -6,8 +6,8 @@
 
 const characterBoard = async () => {
   const data = await fetch("https://rickandmortyapi.com/api/character");
-  const json = await data.json();
-  return json.results;
+  const response = await data.json();
+  return response;
 };
 characterBoard();
 
@@ -22,9 +22,14 @@ character10Board();
 
 // d) Pod tytułem dodaj opis który będzie zawierał informację "Wszystkich dostępnych postaci jest X"(tutaj gdzie X wyswietl
 // liczbe wszystkich dostepnych postaci)
+let page = 1;
+let info = null;
+
 const main = async () => {
   const allCharacters = async () => {
-    const data = await fetch("https://rickandmortyapi.com/api/character");
+    const data = await fetch(
+      `https://rickandmortyapi.com/api/character?page=${page}`
+    );
     const json = await data.json();
     return json;
   };
@@ -40,29 +45,41 @@ const main = async () => {
 
   const $buttonPrev = document.getElementById("prev");
   $buttonPrev.addEventListener("click", async (el) => {
-    const data = await fetch(
-      "https://rickandmortyapi.com/api/character?page=1"
-    );
-    const json = await data.json();
-    const $lista = document.getElementById("lista");
-    $strona.innerHTML = 1;
-    $lista.innerHTML = "";
+    if (info.prev === null) {
+      alert("Jesteś na pierwszej stronie");
+      return;
+    }
+    page--;
+
+    const character = await allCharacters();
+    info = character.info;
+    const $ilosc = document.getElementById("lista");
+    $ilosc.innerHTML = "";
+    character.results.forEach(characterCard);
+
     json.results.splice(0, 10).forEach((character) => characterCard(character));
   });
 
   const $buttonNext = document.getElementById("next");
 
   $buttonNext.addEventListener("click", async (el) => {
+    if (info.next === null) {
+      alert("Jesteś na ostatniej stronie");
+      return;
+    }
+    page++;
+
+    const character = await allCharacters();
+    info = character.info;
+    const $ilosc = document.getElementById("lista");
+    $ilosc.innerHTML = "";
+    character.results.forEach(characterCard);
+
     const data = await fetch(
-      "https://rickandmortyapi.com/api/character?page=1"
+      `https://rickandmortyapi.com/api/character?page=${page}`
     );
-    const json = await data.json();
-    const $lista = document.getElementById("lista");
-    $strona.innerHTML = 2;
-    $lista.innerHTML = "";
-    json.results
-      .splice(10, 10)
-      .forEach((character) => characterCard(character));
+
+    json.results.splice(6, 10).forEach((character) => characterCard(character));
   });
 
   const $buttonAlternative = document.getElementById("alternative");

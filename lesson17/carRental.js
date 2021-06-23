@@ -47,3 +47,18 @@ const rentalCarCompany = [
     price: 340,
   },
 ];
+// a) posortuj marki aut alfabetycznie,
+const rentalCarCompany2 = rentalCarCompany
+  .sort(function ({ name }) {
+    return name;
+  })
+  .filter(function (item) {
+    return item.price < 400;
+  })
+  .sort(function (item) {
+    return item.price 
+  }
+
+
+
+console.log(rentalCarCompany2);

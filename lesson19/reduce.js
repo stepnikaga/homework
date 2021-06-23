@@ -63,14 +63,15 @@ for (let i = 0; i < someArray.length; i++) {
 }
 
 // 12. stwórz metodę every za pomocą pętli for,
-for (let i = 0; i < someArray.length; i++) {
-  if (someArray[i] > 0) {
-    console.log(true);
-  } else {
-    console.log(false);
+const array = [1, 2, 3, 4, 5];
+let result = true;
+
+for (let i = 0; i < array.length; i++) {
+  if (array[i] > 0 === false) {
+    result = false;
   }
 }
-// nadal nie do końca rozumiem o co tu chodzi, zrobiłam jak umiałam/
+console.log(result);
 
 // Funkcje i metody reduce, some i every
 // Stwórz funkcję, która:
