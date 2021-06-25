@@ -13,13 +13,13 @@ function mainWrapper() {
   const $buttonPrev = document.getElementById("prev");
   const $buttonNext = document.getElementById("next");
   const $inputFilter = document.getElementById("filter");
-  const $selectedStatus = document.getElementById("status");
+  const $selectdStatus = document.getElementById("status");
   const $buttonClear = document.getElementById("clear");
 
   $buttonPrev.addEventListener("click", handlePageChangeClick);
   $buttonNext.addEventListener("click", handlePageChangeClick);
   $inputFilter.addEventListener("keyup", handleFilterBackend);
-  $selectedStatus.addEventListener("change", handleFilterStatus);
+  $selectdStatus.addEventListener("change", handleFilterStatus);
   $buttonClear.addEventListener("click", handleClearFilters);
 
   function handleClearFilters() {
@@ -40,6 +40,7 @@ function mainWrapper() {
   //     }
   //   });
   // }
+
   async function handleFilterStatus(event) {
     const { value } = event.target;
     console.log("valeu", value);
@@ -60,6 +61,7 @@ function mainWrapper() {
     characters.results.forEach(stworzKartePostaci);
     stanAplikacji.$liczbaPostaci.innerHTML = characters.info.count;
   }
+
   async function handlePageChangeClick(event) {
     const direction = event.target.id;
     if (direction === "prev" && stanAplikacji.info.prev === null) {
@@ -70,13 +72,11 @@ function mainWrapper() {
       return;
     }
     direction === "prev" ? stanAplikacji.page-- : stanAplikacji.page++;
-
     const characters = await pobierzPostaci();
     stanAplikacji.info = characters.info;
     stanAplikacji.$listaPostaci.innerHTML = "";
     characters.results.forEach(stworzKartePostaci);
   }
-
   async function pobierzPostaci() {
     let params = `/?page=${stanAplikacji.page}`;
     if (stanAplikacji.filters.name) {
@@ -84,7 +84,7 @@ function mainWrapper() {
     }
 
     if (stanAplikacji.filters.status) {
-      params += `status=${stanAplikacji.filters.status}`;
+      params += `&status=${stanAplikacji.filters.status}`;
     }
 
     const data = await fetch(
@@ -121,6 +121,7 @@ function mainWrapper() {
     stanAplikacji.$liczbaPostaci.innerHTML = characters.info.count;
     characters.results.forEach(stworzKartePostaci);
   }
+
   main();
 }
-setTimeout(mainWrapper, 100);
+setTimeout(mainWrapper, 10);

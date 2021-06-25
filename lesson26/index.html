@@ -29,12 +29,14 @@
       align-items: center;
     }
   </style>
+
   <body>
     <h1>Lista Postaci Rick and Morty</h1>
     <h3>Pełna lista zawiera <span id="liczba-postaci"></span> postaci</h3>
 
     <include src="./components/Navigation.html"></include>
     <div id="lista"></div>
+
     <script>
       function includeHTML() {
         const $includes = document.getElementsByTagName("include");
@@ -45,7 +47,6 @@
           $include.innerHTML = htmlText;
         });
       }
-
       includeHTML();
     </script>
     <script src="index.js"></script>
